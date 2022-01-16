@@ -7,7 +7,9 @@
 
 #include "LinkedList.h"
 
-// Destructor.
+/**
+ * Destructor: deletes the Nodes of the LinkedList.
+ */
 LinkedList::~LinkedList() {
   for (Node *i = _head, *next; i != nullptr; i = next) {
     next = i->_next;  // Next pointer set to the node after i.
@@ -15,7 +17,12 @@ LinkedList::~LinkedList() {
   }
 }
 
-// Adds a node, value, to the linked list.
+
+/**
+ * Adds a node with a specific to the linked list.
+ *
+ * @param value - the value to add for the node.
+ */
 void LinkedList::add(char value) {
   Node *n = new Node(value);
   _size++;
@@ -30,7 +37,13 @@ void LinkedList::add(char value) {
   _tail = _tail->_next;
 }
 
-// Returns true if value is found, else returns false.
+
+/**
+ * Returns true if value is found in the LinkedList, else returns false.
+ *
+ * @param value - the value to search for.
+ * @return bool - true if found, false if not found.
+ */
 bool LinkedList::search(char value) {
   // For every item in the linked list.
   for (Node *i = _head; i != nullptr; i = i->_next) {
@@ -43,12 +56,20 @@ bool LinkedList::search(char value) {
   return false;
 }
 
-// Returns the size of the linked list.
+
+/**
+ * Returns the size of the LinkedList.
+ *
+ * @return size_t - the amount of items in the LinkedList.
+ */
 size_t LinkedList::size() {
   return _size;
 }
 
-// Prints every item in the LinkedList formatted.
+
+/**
+ * Prints every Node in the LinkedList formatted.
+ */
 void LinkedList::print() {
   std::cout << "[";
 
