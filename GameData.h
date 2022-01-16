@@ -23,7 +23,7 @@ class GameData {
   std::string _revealedLetters;
 
  public:
-  LinkedList<char> guesses;
+  LinkedList guesses;
 
   GameData();
   void readAnswerList();

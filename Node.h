@@ -10,20 +10,15 @@
 
 #include <iostream>
 
-template<class T>
-class LinkedList;
-
-template<class T>
 class Node {
  private:
-  T _value;
-  Node<T> *_next = nullptr;
-  friend class LinkedList<T>;
-  template<class U>
-  friend std::ostream &operator<<(std::ostream &os, const Node<U> &n);
+  char _value;
+  Node *_next = nullptr;
+  friend class LinkedList;
+  friend std::ostream &operator<<(std::ostream &os, const Node &n);
 
  public:
-  explicit Node(T value);
+  explicit Node(char value);
 };
 
 #endif  // LINKEDLIST_NODE_H_

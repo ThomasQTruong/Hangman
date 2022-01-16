@@ -12,12 +12,11 @@
 
 - Node.h/.cpp
   - Node declaration and definition.
-  - It is a templated class; can hold/use any datatype.
   - Functions:
-      - Node<T>::Node(T value) : _value(value)
+      - Node::Node(char value)
         - Constructor, creates and sets the value for the node.
         - @param value - the value to set for the node.
-      - std::ostream &operator<<(std::ostream &os, const Node<T> &n)
+      - std::ostream &operator<<(std::ostream &os, const Node &n)
         - Operator overloading: return the value of the node.
         - @param os - the reference to the output stream.
         - @param n - the Node that will have it's value concatenated with os.
@@ -27,21 +26,20 @@
 
 - LinkedList.h/.cpp
   - LinkedList declaration and definition.
-  - It is a templated class; can hold/use any datatype.
   - Functions:
-    - LinkedList<T>::~LinkedList()
+    - LinkedList::~LinkedList()
       - Destructor: deletes the Nodes of the LinkedList.
-    - void LinkedList<T>::add(T value)
+    - void LinkedList::add(char value)
       - Adds a node with a specific to the linked list.
       - @param value - the value to add for the node.
-    - bool LinkedList<T>::search(T value)
+    - bool LinkedList::search(char value)
       - Returns true if value is found in the LinkedList, else returns false.
       - @param value - the value to search for.
       - @return bool - true if found, false if not found.
-    - size_t LinkedList<T>::size()
+    - size_t LinkedList::size()
       - Returns the size of the LinkedList.
       - @return size_t - the amount of items in the LinkedList.
-    - void LinkedList<T>::print()
+    - vvoid LinkedList::print()
       - Prints every Node in the LinkedList formatted.
 
 <br/>
