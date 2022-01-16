@@ -9,3 +9,8 @@
 
 Node::Node(char value) : _value(value) {
 }
+
+// Operator overloading: return the value of the node.
+std::ostream &operator<<(std::ostream &os, const Node &n) {
+  return os << n._value;
+}
