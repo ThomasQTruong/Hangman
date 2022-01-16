@@ -10,7 +10,7 @@
 /**
  * Destructor: deletes the Nodes of the LinkedList.
  */
-template <class T>
+template<class T>
 LinkedList<T>::~LinkedList() {
   for (Node<T> *i = _head, *next; i != nullptr; i = next) {
     next = i->_next;  // Next pointer set to the node after i.
@@ -24,7 +24,7 @@ LinkedList<T>::~LinkedList() {
  *
  * @param value - the value to add for the node.
  */
-template <class T>
+template<class T>
 void LinkedList<T>::add(T value) {
   Node<T> *n = new Node<T>(value);
   _size++;
@@ -46,7 +46,7 @@ void LinkedList<T>::add(T value) {
  * @param value - the value to search for.
  * @return bool - true if found, false if not found.
  */
-template <class T>
+template<class T>
 bool LinkedList<T>::search(T value) {
   // For every item in the linked list.
   for (Node<T> *i = _head; i != nullptr; i = i->_next) {
@@ -65,7 +65,7 @@ bool LinkedList<T>::search(T value) {
  *
  * @return size_t - the amount of items in the LinkedList.
  */
-template <class T>
+template<class T>
 size_t LinkedList<T>::size() {
   return _size;
 }
@@ -74,7 +74,7 @@ size_t LinkedList<T>::size() {
 /**
  * Prints every Node in the LinkedList formatted.
  */
-template <class T>
+template<class T>
 void LinkedList<T>::print() {
   std::cout << "[";
 

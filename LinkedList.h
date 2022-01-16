@@ -12,7 +12,7 @@
 #include "string"
 #include "Node.h"
 
-template <class T>
+template<class T>
 class LinkedList {
  private:
   Node<T> *_head = nullptr;

@@ -12,7 +12,7 @@
  *
  * @param value - the value to set for the node.
  */
-template <class T>
+template<class T>
 Node<T>::Node(T value) : _value(value) {
 }
 
@@ -23,7 +23,7 @@ Node<T>::Node(T value) : _value(value) {
  * @param n - the Node that will have it's value concatenated with os.
  * @return std::ostream& - the reference to the modified output stream.
  */
-template <class T>
+template<class T>
 std::ostream &operator<<(std::ostream &os, const Node<T> &n) {
   return os << n._value;
 }

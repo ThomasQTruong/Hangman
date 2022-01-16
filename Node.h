@@ -10,13 +10,17 @@
 
 #include <iostream>
 
-template <class T>
+template<class T>
+class LinkedList;
+
+template<class T>
 class Node {
  private:
   T _value;
-  Node *_next = nullptr;
-  friend class LinkedList;
-  friend std::ostream &operator<<(std::ostream &os, const Node<T> &n);
+  Node<T> *_next = nullptr;
+  friend class LinkedList<T>;
+  template<class U>
+  friend std::ostream &operator<<(std::ostream &os, const Node<U> &n);
 
  public:
   explicit Node(T value);
