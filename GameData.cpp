@@ -104,10 +104,10 @@ bool GameData::revealLetter(char letter) {
   // For every letter in _answer.
   for (int i = 0; i < _answer.length(); i++) {
     // If letter found.
-    if (letter == _answer[i]) {
+    if (letter == tolower(_answer[i])) {
       revealedAny = true;
       // Replace _ in _revealedLetters with letter.
-      _revealedLetters[i] = letter;
+      _revealedLetters[i] = _answer[i];
     }
   }
   return revealedAny;
