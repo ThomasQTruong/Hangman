@@ -54,12 +54,12 @@ void LinkedList::print() {
 
   // Print out every node in the linked list. (Node's << operator is overloaded.)
   for (Node *i = _head; i != nullptr; i = i->_next) {
-    std::cout << i;
+    std::cout << *i;
 
     if (i->_next != nullptr) {
       std::cout << ", ";
     }
   }
 
-  std::cout << "]";
+  std::cout << "]" << std::endl;
 }
