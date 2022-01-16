@@ -3,10 +3,32 @@
 ## By <ins>Thomas Truong</ins>
 
 # Features:
-- Hangman.cpp
+- Hangman.h/.cpp
+  - Hangman declaration and definition.
   - The game itself.
   - Functions:
-    - ...
+    - int main(void)
+      - Where the program begins.
+    - char getGuess()
+      - Asks the user for their guess.
+    - void registerGuess(char guess)
+      - Registers the user's guess.
+      - Adds to guessed letters list if invalid.
+      - Reveals the letter if valid.
+      - @param guess - the letter the user guessed.
+    - void printGuesses()
+      - Prints the list of invalid guesses.
+    - void printHuman(int amount)
+      - Draws a human based on the amount of invalid guesses.
+      - @param amount - the amount of invalid guesses.
+    - int gameEnded()
+      - Checks whether the game ended or not.
+      - Returns 0 if game did not end yet.
+      - Returns 1 if user won.
+      - Returns 2 if user lost.
+    - void printWinLose(int value)
+      - Prints whether the user won or lost.
+      - @param value - the value from gameEnded() which states whether user won or lost.
 
 <br/>
 
@@ -62,6 +84,6 @@
       - @return std::string - the revealed letters.
     - bool GameData::revealLetter(char letter)
       - Reveals a given letter from _revealedLetters.
-      - Returns false if the given letter was revealed before/does not exist.
-      - Otherwise, returns true if the given letter was revaled.
+      - Returns false if the given letter does not exist.
+      - Otherwise, returns true if the given letter exists.
       - @param letter - the letter to reveal.

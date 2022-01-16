@@ -24,7 +24,6 @@ class GameData {
 
  public:
   LinkedList guesses;
-
   GameData();
   void readAnswerList();
   void generateRandomAnswer();

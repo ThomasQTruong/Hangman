@@ -93,8 +93,8 @@ std::string GameData::getRevealedLetters() {
 
 /**
  * Reveals a given letter from _revealedLetters.
- * Returns false if the given letter was revealed before/does not exist.
- * Otherwise, returns true if the given letter was revaled.
+ * Returns false if the given letter does not exist.
+ * Otherwise, returns true if the given letter exists.
  * 
  * @param letter - the letter to reveal.
  */
@@ -103,8 +103,8 @@ bool GameData::revealLetter(char letter) {
 
   // For every letter in _answer.
   for (int i = 0; i < _answer.length(); i++) {
-    // If letter found and not revealed already.
-    if (letter == _answer[i] && letter != _revealedLetters[i]) {
+    // If letter found.
+    if (letter == _answer[i]) {
       revealedAny = true;
       // Replace _ in _revealedLetters with letter.
       _revealedLetters[i] = letter;
