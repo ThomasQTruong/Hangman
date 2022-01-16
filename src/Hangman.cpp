@@ -9,6 +9,7 @@
 #include "LinkedList.h"
 
 int main(void) {
+  srand(time(0));
   LinkedList guesses;
 
   return 0;

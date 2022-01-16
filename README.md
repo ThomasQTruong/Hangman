@@ -22,6 +22,8 @@
         - @param n - the Node that will have it's value concatenated with os.
         - @return std::ostream& - the reference to the modified output stream.
 
+<br/>
+
 - LinkedList.h/.cpp
   - LinkedList declaration and definition.
   - Functions:
@@ -39,3 +41,21 @@
       - @return size_t - the amount of items in the LinkedList.
     - void print()
       - Prints every Node in the LinkedList formatted.
+
+<br/>
+
+- GameData.h/.cpp
+  - GameData declaration and definition.
+  - Contains all of the game data.
+  - Functions:
+    - GameData()
+      - Constructor: Creates and retrieves the required data.
+    - void readAnswerList()
+      - Reads the answer list file and puts every answer into _possibleAnswers vector.
+    - void generateRandomAnswer()
+      - Selects a random answer from _possibleAnswers and stores into _answers.
+    - std::string getAnswer()
+      - Retrieves the answer.
+      - @return std::string - the answer.
+    - std::string getRevealedLetters()
+      - Retrieves the revealed letters.
