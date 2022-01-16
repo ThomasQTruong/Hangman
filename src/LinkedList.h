@@ -21,7 +21,7 @@ class LinkedList {
  public:
   ~LinkedList();
   void add(char value);
-
+  bool search(char value);
   size_t size();
   void print();
 };

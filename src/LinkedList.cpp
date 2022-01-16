@@ -15,6 +15,7 @@ LinkedList::~LinkedList() {
   }
 }
 
+// Adds a node, value, to the linked list.
 void LinkedList::add(char value) {
   Node *n = new Node(value);
   _size++;
@@ -29,6 +30,20 @@ void LinkedList::add(char value) {
   _tail = _tail->_next;
 }
 
+// Returns true if value is found, else returns false.
+bool LinkedList::search(char value) {
+  // For every item in the linked list.
+  for (Node *i = _head; i != nullptr; i = i->_next) {
+    // Value found.
+    if (i->_value == value) {
+      return true;
+    }
+  }
+  // Value was not found.
+  return false;
+}
+
+// Returns the size of the linked list.
 size_t LinkedList::size() {
   return _size;
 }
