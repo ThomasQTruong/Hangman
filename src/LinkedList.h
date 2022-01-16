@@ -21,6 +21,7 @@ class LinkedList {
  public:
   ~LinkedList();
   void add(char value);
+
   size_t size();
   void print();
 };
