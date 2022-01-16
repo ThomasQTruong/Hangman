@@ -21,12 +21,12 @@ GameData::GameData() {
  * answer into _possibleAnswers vector.
  */
 void GameData::readAnswerList() {
-  std::ofstream fout;
+  std::ifstream fin;
 
   // Open file.
-  fout.open(_answerListPath);
+  fin.open(_answerListPath);
   // Did it fail to open?
-  if (fout.fail()) {
+  if (fin.fail()) {
     exit(1);
   }
 
@@ -34,7 +34,7 @@ void GameData::readAnswerList() {
   std::string line;
 
   // Read every line.
-  while (getline(std::cin, line)) {
+  while (getline(fin, line)) {
     // Not a blank line.
     if (line != "") {
       // Add to vector.
@@ -51,7 +51,14 @@ void GameData::readAnswerList() {
 void GameData::generateRandomAnswer() {
   // Sets _answer to a random item from _possibleAnswers.
   _answer = _possibleAnswers[rand() % _possibleAnswers.size()];
+
+  // Set the revealedLetters since its a brand new word.
+  _revealedLetters = "";
+  for (int i = 0; i < _answer.length(); i++) {
+    _revealedLetters += "_";
+  }
 }
+
 
 /**
  * Retrieves the answer.
@@ -59,7 +66,7 @@ void GameData::generateRandomAnswer() {
  * @return std::string - the answer. 
  */
 std::string GameData::getAnswer() {
-  return _answer;
+  return "anmswer: " + _answer;
 }
 
 
@@ -69,5 +76,5 @@ std::string GameData::getAnswer() {
  * @return std::string - the answer. 
  */
 std::string GameData::getRevealedLetters() {
-  return _answer;
+  return _revealedLetters;
 }

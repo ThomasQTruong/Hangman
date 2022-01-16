@@ -19,7 +19,7 @@ class GameData {
   std::string _answerListPath = "words.txt";
   std::vector<std::string> _possibleAnswers;
   std::string _answer;
-  std::string _current;
+  std::string _revealedLetters;
 
  public:
   GameData();
