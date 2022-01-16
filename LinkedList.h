@@ -12,16 +12,17 @@
 #include "string"
 #include "Node.h"
 
+template <class T>
 class LinkedList {
  private:
-  Node *_head = nullptr;
-  Node *_tail = nullptr;
+  Node<T> *_head = nullptr;
+  Node<T> *_tail = nullptr;
   size_t _size = 0;
 
  public:
   ~LinkedList();
-  void add(char value);
-  bool search(char value);
+  void add(T value);
+  bool search(T value);
   size_t size();
   void print();
 };
