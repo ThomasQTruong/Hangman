@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include "LinkedList.h"
 
 class GameData {
  private:
@@ -22,11 +23,14 @@ class GameData {
   std::string _revealedLetters;
 
  public:
+  LinkedList guesses;
+
   GameData();
   void readAnswerList();
   void generateRandomAnswer();
   std::string getAnswer();
   std::string getRevealedLetters();
+  bool revealLetter(char letter);
 };
 
 #endif  // HANGMAN_GAMEDATA_H_

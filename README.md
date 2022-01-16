@@ -59,3 +59,9 @@
       - @return std::string - the answer.
     - std::string getRevealedLetters()
       - Retrieves the revealed letters.
+      - @return std::string - the revealed letters.
+    - void GameData::revealLetter(char letter)
+      - Reveals a given letter from _revealedLetters.
+      - Returns false if the given letter was revealed before/does not exist.
+      - Otherwise, returns true if the given letter was revaled.
+      - @param letter - the letter to reveal.

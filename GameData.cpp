@@ -55,7 +55,18 @@ void GameData::generateRandomAnswer() {
   // Set the revealedLetters since its a brand new word.
   _revealedLetters = "";
   for (int i = 0; i < _answer.length(); i++) {
-    _revealedLetters += "_";
+    switch (_answer[i]) {
+      // Cases where we would want to keep the same characters.
+      case ' ':
+      case '/':
+      case '-':
+        _revealedLetters += _answer[i];
+        break;
+
+      // Normal character, proceed with masking it.
+      default:
+        _revealedLetters += "_";
+    }
   }
 }
 
@@ -66,15 +77,38 @@ void GameData::generateRandomAnswer() {
  * @return std::string - the answer. 
  */
 std::string GameData::getAnswer() {
-  return "anmswer: " + _answer;
+  return _answer;
 }
 
 
 /**
  * Retrieves the revealed letters.
  *
- * @return std::string - the answer. 
+ * @return std::string - the revealed letters. 
  */
 std::string GameData::getRevealedLetters() {
   return _revealedLetters;
+}
+
+
+/**
+ * Reveals a given letter from _revealedLetters.
+ * Returns false if the given letter was revealed before/does not exist.
+ * Otherwise, returns true if the given letter was revaled.
+ * 
+ * @param letter - the letter to reveal.
+ */
+bool GameData::revealLetter(char letter) {
+  bool revealedAny = false;
+
+  // For every letter in _answer.
+  for (int i = 0; i < _answer.length(); i++) {
+    // If letter found and not revealed already.
+    if (letter == _answer[i] && letter != _revealedLetters[i]) {
+      revealedAny = true;
+      // Replace _ in _revealedLetters with letter.
+      _revealedLetters[i] = letter;
+    }
+  }
+  return revealedAny;
 }
