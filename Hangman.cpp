@@ -86,10 +86,9 @@ void printGuesses() {
  * @param amount - the amount of invalid guesses.
  */
 void printHuman(int amount) {
-  std::cout << "Human:" << std::endl;
-
   // Draw head.
   if (amount >= 1) {
+    std::cout << std::endl << "Human:" << std::endl;
     std::cout << " o " << std::endl;
   }
   // Draw body/arms.
