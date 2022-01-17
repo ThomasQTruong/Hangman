@@ -7,10 +7,15 @@
  */
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "Hangman.h"
+#include "GameData.h"
 
 int main(void) {
   srand(time(0));
+
+  data = GameData();
 
   do {
     // Grabs the guess from user input & registers the guess.
@@ -140,5 +145,6 @@ void printWinLose(int value) {
   } else {
     // Lost.
     std::cout << "You lost! ;(" << std::endl;
+    std::cout << "The answer was: " << data.getAnswer() << std::endl;
   }
 }

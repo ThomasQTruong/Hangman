@@ -8,8 +8,6 @@
 #ifndef HANGMAN_HANGMAN_H_
 #define HANGMAN_HANGMAN_H_
 
-#include "GameData.h"
-
 // Function declarations.
 char getGuess();
 void registerGuess(char guess);
@@ -19,6 +17,6 @@ int gameEnded();
 void printWinLose(int value);
 
 // Global variable(s)/object(s).
-GameData data = GameData();
+GameData data;
 
 #endif  // HANGMAN_HANGMAN_H_
