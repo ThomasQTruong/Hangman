@@ -144,6 +144,6 @@ void printWinLose(int value) {
   } else {
     // Lost.
     std::cout << "You lost! ;(" << std::endl;
-    std::cout << "The answer was: " << data.getAnswer() << std::endl;
   }
+  std::cout << "The answer was: " << data.getAnswer() << std::endl;
 }
