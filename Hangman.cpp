@@ -7,8 +7,6 @@
  */
 
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include "Hangman.h"
 
 int main(void) {
