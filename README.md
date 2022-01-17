@@ -1,4 +1,4 @@
-# CS 008 Programming Project: Hang Man
+# CS 008 Programming Project: Hangman
 
 ## By <ins>Thomas Truong</ins>
 
