@@ -103,6 +103,11 @@ bool GameData::revealLetter(char letter) {
 
   // For every letter in _answer.
   for (int i = 0; i < _answer.length(); i++) {
+    // Letter should not be guessed.
+    if (letter == ' ' || letter == '-' || letter == '/') {
+      return true;
+    }
+
     // If letter found.
     if (letter == tolower(_answer[i])) {
       revealedAny = true;
