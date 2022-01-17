@@ -60,6 +60,9 @@ void GameData::generateRandomAnswer() {
       case ' ':
       case '/':
       case '-':
+      case '\'':
+      case ',':
+      case '.':
         _revealedLetters += _answer[i];
         break;
 
@@ -104,8 +107,14 @@ bool GameData::revealLetter(char letter) {
   // For every letter in _answer.
   for (int i = 0; i < _answer.length(); i++) {
     // Letter should not be guessed.
-    if (letter == ' ' || letter == '-' || letter == '/') {
-      return true;
+    switch (letter) {
+      case ' ':
+      case '-':
+      case '/':
+      case '\'':
+      case ',':
+      case '.':
+        return true;
     }
 
     // If letter found.
