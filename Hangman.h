@@ -8,6 +8,8 @@
 #ifndef HANGMAN_HANGMAN_H_
 #define HANGMAN_HANGMAN_H_
 
+#include "GameData.h"
+
 // Function declarations.
 char getGuess();
 void registerGuess(char guess);

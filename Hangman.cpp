@@ -10,7 +10,6 @@
 #include <cstdlib>
 #include <ctime>
 #include "Hangman.h"
-#include "GameData.h"
 
 int main(void) {
   srand(time(0));
